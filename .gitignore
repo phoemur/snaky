@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+snaky
+
+#Project files
+*.user
