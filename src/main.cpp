@@ -18,7 +18,9 @@ int main()
 {
     using namespace std::chrono;
 
+    // Create Mainwindow
     MainWindow win(WIDTH, HEIGHT, "Snaky");
+    win.set_icon("./snaky_assets/apple.png");
 
     // Create Title
     Font font ("./snaky_assets/lazy.ttf", 18);

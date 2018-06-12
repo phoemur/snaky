@@ -61,6 +61,16 @@ MainWindow::~MainWindow() noexcept
     SDL_Quit();
 }
 
+void MainWindow::set_icon(const std::string& path)
+{
+    SDL_Surface* icon = IMG_Load(path.c_str());
+    if (icon == nullptr) {
+        throw SnakeException(std::string("Could not load Icon! SDL_image Error: ") + IMG_GetError());
+    }
+    SDL_SetWindowIcon(gWindow, icon);
+    SDL_FreeSurface(icon); // icon is no longer required
+}
+
 void MainWindow::clear()
 {
     SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );

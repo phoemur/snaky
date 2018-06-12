@@ -15,6 +15,7 @@ public:
     MainWindow(int w, int h, const std::string& title);
     ~MainWindow() noexcept;
 
+    void set_icon(const std::string& path);
     void clear();
     void update();
 
