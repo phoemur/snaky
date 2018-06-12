@@ -1,3 +1,4 @@
+// Visit http://lazyfoo.net/tutorials/SDL/index.php
 #ifndef TEXTURE_H
 #define TEXTURE_H
 
@@ -10,34 +11,20 @@
 //Texture wrapper class
 class Texture {
 public:
-    //Initializes variables
     Texture(MainWindow& m);
-
-    //Deallocates memory
     ~Texture();
+    Texture(const Texture&) = delete;
+    Texture& operator=(const Texture&) = delete;
+    Texture(Texture&&) noexcept = default;
+    Texture& operator=(Texture&&) noexcept = default;
 
-    //Loads image at specified path
     bool loadFromFile( const std::string& path );
-
-    //Creates image from font string
     bool loadFromRenderedText( std::string textureText, Font& f, SDL_Color textColor );
-
-    //Deallocates texture
     void free();
-
-    //Set color modulation
     void setColor( Uint8 red, Uint8 green, Uint8 blue );
-
-    //Set blending
     void setBlendMode( SDL_BlendMode blending );
-
-    //Set alpha modulation
     void setAlpha( Uint8 alpha );
-
-    //Renders texture at given point
     void render( int x, int y, SDL_Rect* clip = nullptr, double angle = 0.0, SDL_Point* center = nullptr, SDL_RendererFlip flip = SDL_FLIP_NONE );
-
-    //Gets image dimensions
     int  get_width() const noexcept {return mWidth; }
     int get_height() const noexcept {return mHeight;}
 
