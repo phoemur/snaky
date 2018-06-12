@@ -19,7 +19,7 @@ public:
     Texture& operator=(Texture&&) noexcept = default;
 
     bool loadFromFile( const std::string& path );
-    bool loadFromRenderedText( std::string textureText, Font& f, SDL_Color textColor );
+    bool loadFromRenderedText(const std::string& textureText, Font& f, SDL_Color textColor );
     void free();
     void setColor( Uint8 red, Uint8 green, Uint8 blue );
     void setBlendMode( SDL_BlendMode blending );

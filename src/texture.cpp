@@ -48,7 +48,7 @@ bool Texture::loadFromFile( const std::string& path )
     return mTexture != nullptr;
 }
 
-bool Texture::loadFromRenderedText( std::string textureText, Font& f, SDL_Color textColor )
+bool Texture::loadFromRenderedText( const std::string& textureText, Font& f, SDL_Color textColor )
 {
     //Get rid of preexisting texture
     free();
